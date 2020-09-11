@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>JS</title>
+</head>
+<body>
+
+<div class=container>
+<div class="row justify-content-center">
+        <div class="col-sm-4">   
+
+           <div class="card card-primary"> 
+           <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+             <h3 class="title">Add Project Details </h3>
+           </nav>  
+           <form action="{{ route('assignproject') }}" method="post">
+                {{ csrf_field() }}
+                
+              <div class="form-group">
+                <label> <h5> Project Name </h5> </label> <br>
+                <input type="text" class="form-control" id="prct_name" name="prct_name" >
+              </div>
+
+              <div class="form-group">
+                <label> <h5> Description </h5> </label> <br>
+                <textarea rows="4" class="form-control" id="description" name="Description" placeholder="Enter description here" ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label> <h5> Submission_Date </h5> </label>
+                <input type="date" class="form-control" id="sub_date" name="sub_date">
+              </div>
+                  
+              <button type="submit" class="btn btn-success" name="submit">Submit</button> 
+                &nbsp &nbsp &nbsp
+              <a href="{{ asset('home') }}" class="btn btn-info">Back</a> 
+
+            </form>
+            
+        </div>
+</div>        
+</div>
+</body>
+</html>
